@@ -34,6 +34,7 @@
             LBLsenha = new Label();
             BTlogar = new Button();
             LBLloginmensagem = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // TXTlogin
@@ -108,12 +109,27 @@
             LBLloginmensagem.Text = "mensagem";
             LBLloginmensagem.Click += LBLloginmensagem_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ActiveBorder;
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.Cursor = Cursors.Hand;
+            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            button1.Location = new Point(421, 172);
+            button1.Name = "button1";
+            button1.Size = new Size(78, 27);
+            button1.TabIndex = 8;
+            button1.Text = "ver senha";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
             ClientSize = new Size(596, 416);
+            Controls.Add(button1);
             Controls.Add(LBLloginmensagem);
             Controls.Add(BTlogar);
             Controls.Add(LBLsenha);
@@ -135,5 +151,6 @@
         private Label LBLsenha;
         private Button BTlogar;
         private Label LBLloginmensagem;
+        private Button button1;
     }
 }

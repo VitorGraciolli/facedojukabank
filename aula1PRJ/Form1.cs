@@ -38,23 +38,64 @@ namespace aula1PRJ
         {
             //codigo quando o botão logar for clicado
             //senha autenticada usuario autenticado
-            if (TXTlogin.Text == "12345678900" && TXTsenha.Text == "123321")
+
+            string mensagem;
+            
+
+            if (TXTlogin.Text == string.Empty || TXTsenha.Text == string.Empty)
             {
 
-                LBLloginmensagem.Text = "usuario autenticado";
+                mensagem = "preencha os dados corretamente";
             }
             else
             {
+                if (TXTlogin.TextLength < 11 || TXTsenha.TextLength < 6)
+                {
 
-                LBLloginmensagem.Text = "login ou senha errada";
+                    mensagem = "confirme os caracteres e numeros digitados";
 
+                }
+                else
+                {
+
+                    if (TXTlogin.Text == "12345678900" && TXTsenha.Text == "123321")
+                    {
+
+                        mensagem = "usuario autenticado";
+
+                    }
+                    else
+                    {
+
+                        mensagem = "login ou senha errada";
+
+
+                    }
+
+                }
             }
 
-        }
+            //mensagem no label 
 
+            MessageBox.Show(mensagem, "aviso!", MessageBoxButtons.OK, MessageBoxIcon.Warning);   
+        
+        
+        
+        }
         private void LBLloginmensagem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            TXTsenha.UseSystemPasswordChar = false;
+            if (true)
+            {
+
+                TXTsenha.UseSystemPasswordChar = true;
+
+            }
         }
     }
 }
